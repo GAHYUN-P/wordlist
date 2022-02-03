@@ -87,7 +87,7 @@ switch (action.type) {
         const new_card_list = [...state.list, action.card_data]; 
         console.log(new_card_list)
         // [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
-        return new_card_list;
+        return {list: new_card_list};
     }
 // do reducer stuff
 default: return state;
