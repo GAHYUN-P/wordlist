@@ -15,21 +15,45 @@ function Card(props) {
     // console.log(my_words[0].word)
 
     return (
-        <div>
+        <CardWrap>
             {
                 my_words.list.map((x)=> {
                     return (
-                        <div>
-                            {x.word}
-                            {x.expl}
-                            {x.exam}
-                        </div>
+                        <Cards>
+                            <Word>{x.word}</Word>
+                            <Expl>{x.expl}</Expl>
+                            <Exam>{x.exam}</Exam>
+                        </Cards>
                     )
                 })
             }
-
-        </div>
+        </CardWrap>
     );
 };
+
+const CardWrap = styled.div `
+display: flex;
+width : 100%;
+gap: 1vh;
+flex-wrap: wrap;
+`;
+
+const Cards = styled.div `
+background-color: aliceblue;
+width: 25vw;
+`;
+
+const Word = styled.div `
+text-align: center;
+`;
+
+const Expl = styled.div `
+text-align: center;
+`;
+
+const Exam = styled.div `
+color: slateblue;
+text-align: center;
+`;
 
 export default Card;

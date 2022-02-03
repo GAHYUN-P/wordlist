@@ -88,6 +88,7 @@ switch (action.type) {
         console.log(new_card_list)
         // [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
         return {list: new_card_list};
+        // 리턴값이 초기값 형태랑 같아야한다. list : 에 담아줘야 하는 이유!
     }
 // do reducer stuff
 default: return state;

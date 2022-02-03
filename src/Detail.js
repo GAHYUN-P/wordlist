@@ -18,8 +18,10 @@ function Detail() {
     };
 
 
-    return (<div>
-        <h1>단어 추가하기</h1>
+    return (
+    <DetailContainer>
+        <DetailTitle>단어 추가하기</DetailTitle>
+        <Line/>
         <div>
             <p>단어</p>
             <input type="text" ref={wordInput}/>
@@ -32,12 +34,49 @@ function Detail() {
             <p>예시</p>
             <input type="text" ref={examInput}/>
         </div>
-        <button onClick={addCard}>추가하기</button>
-        <button onClick={() => {
+        <BtnWrap>
+        <BtnAdd onClick={addCard}>추가하기</BtnAdd>
+        <BtnBack onClick={() => {
                 history.push('/');
-            }}>돌아가기</button>
-    </div>
+            }}>돌아가기</BtnBack>
+        </BtnWrap>
+    </DetailContainer>
     );
 };
+
+const DetailContainer = styled.div `
+max-width: 350px;
+min-height: 60vh;
+background-color: #fff;
+padding: 16px;
+margin: 20px auto;
+border-radius: 5px;
+border: 1px solid #ddd;
+`;
+
+const DetailTitle = styled.h1 `
+color: slateblue;
+text-align: center;
+`;
+
+const Line = styled.hr `
+margin: 16px 0px;
+border: 1px dotted #ddd;
+`;
+
+const BtnWrap = styled.div `
+margin-top: 5vh;
+`;
+
+const BtnAdd = styled.button `
+
+`;
+
+const BtnBack = styled.button `
+margin-left: 1vw;
+`;
+
+
+
 
 export default Detail;

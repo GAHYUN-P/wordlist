@@ -13,7 +13,6 @@ function App() {
 
   const dispatch = useDispatch();
 
-    // async로 기다리게 해줄 수 있다.
     React.useEffect( () => {
         dispatch(loadCardFB());
       }, []);
