@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import {useHistory} from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { createCard } from "./redux/modules/card";
+import { createCard, createCardFB } from "./redux/modules/card";
 
 function Detail() {
     let history = useHistory();
@@ -12,9 +12,9 @@ function Detail() {
     const dispatch = useDispatch();
 
     const addCard = () => {
-        dispatch(createCard(wordInput.current.value, explInput.current.value,examInput.current.value));
+        dispatch(createCardFB(wordInput.current.value, explInput.current.value,examInput.current.value));
         alert('저장되었습니다!');
-        history.goBack();
+        history.push('/');
     };
 
 
@@ -34,7 +34,7 @@ function Detail() {
         </div>
         <button onClick={addCard}>추가하기</button>
         <button onClick={() => {
-                history.goBack();
+                history.push('/');
             }}>돌아가기</button>
     </div>
     );

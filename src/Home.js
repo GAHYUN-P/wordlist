@@ -1,12 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+
 import Card from "./Card";
 import Detail from "./Detail";
+import { loadCardFB } from "./redux/modules/card";
+
 import {useHistory} from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 function Home(props) {
 
     let history = useHistory();
+    const dispatch = useDispatch();
+    
+
+    React.useEffect( () => {
+        dispatch(loadCardFB());
+      }, []);
 
     return (
         <div>
