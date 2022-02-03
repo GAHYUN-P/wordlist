@@ -36,11 +36,14 @@ display: flex;
 width : 100%;
 gap: 1vh;
 flex-wrap: wrap;
+justify-content: center;
 `;
 
 const Cards = styled.div `
 background-color: aliceblue;
-width: 25vw;
+width: calc((100% - (20px * 2)) / 3);
+height: 20vh;
+padding-top: 2vh;
 `;
 
 const Word = styled.div `

@@ -28,7 +28,7 @@ function Home(props) {
 
 
 const Container = styled.div `
-max-width: 350px;
+max-width: 60vw;
 min-height: 60vh;
 background-color: #fff;
 padding: 16px;
